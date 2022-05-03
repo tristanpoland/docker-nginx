@@ -16,6 +16,7 @@ RUN set -x \
     && addgroup --system --gid 101 nginx \
     && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx \
     && apt-get update \
+    && sudo apt-get install php-fpm php-mcrypt php-cli php-mysql php-gd php-imagick php-recode php-tidy php-xmlrpc \
     && apt-get install --no-install-recommends --no-install-suggests -y gnupg1 ca-certificates \
     && \
     NGINX_GPGKEY=573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62; \
